@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boeri en Black | South African Boerewors & Black Label</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #222831;
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    :root {
+      --black: #0b0b0b;
+      --dark: #151515;
+      --red: #b5121b;
+      --gold: #f2b705;
+      --cream: #f8f1df;
+      --light-gray: #f3f3f3;
+      --gray-text: #626262;
+      --white: #ffffff;
+    }
+
+    /* HEADER */
+    header {
+      background-color: var(--black);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      color: #ffffff;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo-text span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav-links li a {
+      color: #eeeeee;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 15px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: var(--gold);
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .menu-toggle span {
+      width: 26px;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+        linear-gradient(135deg, #151515 0%, #7d1118 100%);
+      color: #ffffff;
+      padding: 85px 20px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 450px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+
+    .hero-text h1 span {
+      color: var(--gold);
+    }
+
+    .hero-text p {
+      font-size: 17px;
+      color: #eeeeee;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      margin: 0 auto;
+      width: 390px;
+      max-width: 100%;
+      filter: drop-shadow(0 15px 20px rgba(0,0,0,0.45));
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      margin-left: 12px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--gray-text);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .alt-bg {
+      background-color: var(--cream);
+    }
+
+    /* FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background-color: #ffffff;
+      border: 1px solid #e1e1e1;
+      border-radius: 10px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 18px auto;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--red);
+      color: var(--gold);
+      font-size: 30px;
+      border: 3px solid var(--gold);
+    }
+
+    .feature-card h3 {
+      color: var(--black);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .feature-card p {
+      color: var(--gray-text);
+      font-size: 14.5px;
+    }
+
+    /* STATS */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stats-section {
+      background: var(--black);
+      color: white;
+    }
+
+    .stats-bar .stat h3 {
+      font-size: 34px;
+      color: var(--gold);
+    }
+
+    .stats-bar .stat p {
+      color: #dddddd;
+    }
+
+    /* PRODUCTS */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+    }
+
+    .course-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #dddddd;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .course-img {
+      background-color: var(--black);
+      padding: 25px;
+      text-align: center;
+    }
+
+    .product-icon {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    .boerewors-icon {
+      background: linear-gradient(135deg, #8b2118, #c64a2e);
+      border: 3px solid var(--gold);
+    }
+
+    .beer-icon {
+      background: linear-gradient(135deg, #111111, #333333);
+      border: 3px solid var(--gold);
+    }
+
+    .product-icon .big {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .product-icon .small {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .course-body {
+      padding: 20px;
+    }
+
+    .course-card h3 {
+      color: var(--black);
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .course-card p {
+      color: var(--gray-text);
+      font-size: 14.5px;
+      margin-bottom: 14px;
+    }
+
+    .course-tag {
+      display: inline-block;
+      background-color: var(--cream);
+      color: var(--red);
+      font-size: 12.5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    /* ABOUT */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--black);
+      color: white;
+      border-radius: 12px;
+      padding: 35px;
+    }
+
+    .about-box h2 {
+      color: var(--gold);
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .about-box p {
+      color: #dddddd;
+      margin-bottom: 15px;
+    }
+
+    .about-highlight {
+      background: var(--cream);
+      padding: 35px;
+      border-radius: 12px;
+      border-left: 6px solid var(--red);
+    }
+
+    .about-highlight h3 {
+      color: var(--black);
+      margin-bottom: 15px;
+      font-size: 23px;
+    }
+
+    .about-highlight p {
+      color: var(--gray-text);
+    }
+
+    /* CONTACT */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info-card {
+      background-color: var(--black);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+    }
+
+    .contact-info-card h3 {
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 24px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-info-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .contact-info-item p,
+    .contact-info-item a {
+      color: #d7d7d7;
+      font-size: 14.5px;
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 6px;
+      margin-top: 16px;
+      font-size: 14.5px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #d3d3d3;
+      border-radius: 6px;
+      font-size: 14.5px;
+      font-family: inherit;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-msg {
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-msg.success {
+      color: #1b8a3d;
+    }
+
+    .form-msg.error {
+      color: #c62828;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--black);
+      color: #d7d7d7;
+      padding: 40px 20px 20px 20px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto 24px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-inner h4 {
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .footer-inner ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-inner ul li a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: #999999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .contact-wrap,
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--black);
+        flex-direction: column;
+        padding: 10px 20px 20px 20px;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <nav class="navbar">
+
+      <a href="#home" class="logo">
+        <div class="logo-mark">B&B</div>
+        <span class="logo-text">BOERI <span>EN BLACK</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-inner">
+
+      <div class="hero-text">
+
+        <h1>
+          South African Flavour,
+          <span>Bold &amp; Unapologetic.</span>
+        </h1>
+
+        <p>
+          Welcome to Boeri en Black — bringing the taste of a proper South
+          African braai to your table. Enjoy quality boerewors, great food,
+          and a cold Black Label beer.
+        </p>
+
+        <a href="#products" class="btn btn-primary">
+          Explore Our Products
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Get In Touch
+        </a>
+
+      </div>
+
+      <div class="hero-image">
+
+        <svg width="390" height="330" viewBox="0 0 390 330"
+             xmlns="http://www.w3.org/2000/svg">
+
+          <rect width="390" height="330" rx="20" fill="#111111"/>
+
+          <circle cx="195" cy="140" r="105"
+                  fill="#9f171d"
+                  stroke="#f2b705"
+                  stroke-width="5"/>
+
+          <text x="195" y="120"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="34"
+                font-weight="900"
+                fill="#ffffff">
+            BOERI
+          </text>
+
+          <text x="195" y="160"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="26"
+                font-weight="800"
+                fill="#f2b705">
+            EN BLACK
+          </text>
+
+          <path d="M105 215
+                   C125 185 150 205 170 220
+                   C190 235 215 235 235 215
+                   C255 195 275 185 290 215"
+                fill="none"
+                stroke="#f2b705"
+                stroke-width="14"
+                stroke-linecap="round"/>
+
+          <text x="195" y="275"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="17"
+                font-weight="700"
+                fill="#ffffff">
+            SOUTH AFRICAN BRAAI
+          </text>
+
+        </svg>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FEATURES ================= -->
+
+  <section id="about">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Why Choose Boeri en Black?</h2>
+
+        <p>
+          Good food, good beer and good company — inspired by the South
+          African braai tradition.
+        </p>
+
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+
+          <div class="feature-icon">🔥</div>
+
+          <h3>Authentic Boerewors</h3>
+
+          <p>
+            Traditional South African-style boerewors made for the grill,
+            packed with flavour and perfect for a proper braai.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">🍺</div>
+
+          <h3>Black Label</h3>
+
+          <p>
+            Pair your boerewors with a cold Black Label beer for a classic
+            South African combination.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">🥩</div>
+
+          <h3>Braai Ready</h3>
+
+          <p>
+            Whether you're hosting friends or cooking for the family,
+            we've got the flavours for your next braai.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">🇿🇦</div>
+
+          <h3>South African Spirit</h3>
+
+          <p>
+            Our brand celebrates the food, culture and social atmosphere
+            of South Africa.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= STATS ================= -->
+
+  <section class="stats-section">
+
+    <div class="section-inner stats-bar">
+
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Braai Spirit</p>
+      </div>
+
+      <div class="stat">
+        <h3>2</h3>
+        <p>Signature Favourites</p>
+      </div>
+
+      <div class="stat">
+        <h3>🇿🇦</h3>
+        <p>South African Inspired</p>
+      </div>
+
+      <div class="stat">
+        <h3>1</h3>
+        <p>Proper Braai Experience</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PRODUCTS ================= -->
+
+  <section class="alt-bg" id="products">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Our Products</h2>
+
+        <p>
+          The essentials for a South African-inspired braai.
+        </p>
+
+      </div>
+
+
+      <div class="courses-grid">
+
+
+        <!-- BOEREWORS -->
+
+        <div class="course-card">
+
+          <div class="course-img">
+
+            <div class="product-icon boerewors-icon">
+
+              <div class="big">BOEREWORS</div>
+
+              <div class="small">
+                SOUTH AFRICAN SAUSAGE
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="course-body">
+
+            <span class="course-tag">
+              BRAAI FAVOURITE
+            </span>
+
+            <h3>South African Boerewors</h3>
+
+            <p>
+              A traditional-style South African sausage made for grilling.
+              Serve it hot off the braai with your favourite sides.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+              Order / Enquire
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- BLACK LABEL -->
+
+        <div class="course-card">
+
+          <div class="course-img">
+
+            <div class="product-icon beer-icon">
+
+              <div class="big">BLACK</div>
+
+              <div class="small">LABEL</div>
+
+            </div>
+
+          </div>
+
+          <div class="course-body">
+
+            <span class="course-tag">
+              CLASSIC BEER
+            </span>
+
+            <h3>Black Label Beer</h3>
+
+            <p>
+              A classic South African beer choice to enjoy alongside your
+              braai and boerewors.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+              Order / Enquire
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- BRAAI COMBO -->
+
+        <div class="course-card">
+
+          <div class="course-img">
+
+            <div class="product-icon"
+                 style="background:linear-gradient(135deg,#8b2118,#111111);border:3px solid #f2b705;">
+
+              <div class="big">BRAAI</div>
+
+              <div class="small">COMBO</div>
+
+            </div>
+
+          </div>
+
+          <div class="course-body">
+
+            <span class="course-tag">
+              PARTY PICK
+            </span>
+
+            <h3>Boeri &amp; Black Combo</h3>
+
+            <p>
+              Bring together the stars of the show — tasty boerewors and
+              cold Black Label beer for the ultimate braai experience.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+              Enquire Now
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div style="text-align:center; margin-top:36px;">
+
+        <a href="#contact"
+           class="btn"
+           style="background-color:#0b0b0b;color:#fff;">
+          Ask About Our Products
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= OUR STORY ================= -->
+
+  <section id="story">
+
+    <div class="section-inner">
+
+      <div class="about-wrap">
+
+        <div class="about-box">
+
+          <h2>Our Story</h2>
+
+          <p>
+            Boeri en Black was created around one simple idea:
+            great South African food tastes even better when shared.
+          </p>
+
+          <p>
+            From the smell of boerewors cooking on the braai to the sound
+            of friends opening a cold beer, we're about creating the kind
+            of moments people remember.
+          </p>
+
+          <p>
+            Our goal is to bring that relaxed South African braai spirit
+            to every gathering.
+          </p>
+
+        </div>
+
+
+        <div class="about-highlight">
+
+          <h3>
+            More Than Food. It's a Braai.
+          </h3>
+
+          <p>
+            Boerewors, beer, friends and fire. Boeri en Black celebrates
+            the simple ingredients that turn an ordinary gathering into
+            a proper occasion.
+          </p>
+
+          <br />
+
+          <p>
+            Whether you're planning a weekend braai, a family gathering,
+            or simply want something tasty for the grill, we're here to
+            bring the South African flavour.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section class="alt-bg" id="contact">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+          Interested in our boerewors, Black Label or braai packages?
+          Send us a message.
+        </p>
+
+      </div>
+
+
+      <div class="contact-wrap">
+
+
+        <div class="contact-info-card">
+
+          <h3>Boeri en Black</h3>
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">📞</div>
+
+            <div>
+              <strong>Phone</strong>
+              <p>089-123-4567</p>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">✉</div>
+
+            <div>
+              <strong>Email</strong>
+              <p>
+                info@boerienblack.com
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">📍</div>
+
+            <div>
+              <strong>Location</strong>
+              <p>
+                South African-inspired braai food &amp; drinks
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">🔥</div>
+
+            <div>
+              <strong>Special Orders</strong>
+              <p>
+                Ask us about braai packages, events and larger orders.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <form class="contact-form" id="contactForm">
+
+          <label for="name">
+            Your Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+          />
+
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+          />
+
+
+          <label for="interest">
+            What are you interested in?
+          </label>
+
+          <select id="interest">
+
+            <option value="">
+              Select an option
+            </option>
+
+            <option value="boerewors">
+              Boerewors
+            </option>
+
+            <option value="black-label">
+              Black Label
+            </option>
+
+            <option value="combo">
+              Boeri &amp; Black Combo
+            </option>
+
+            <option value="event">
+              Event / Large Order
+            </option>
+
+          </select>
+
+
+          <label for="message">
+            Message
+          </label>
+
+          <textarea
+            id="message"
+            placeholder="Tell us what you need..."
+          ></textarea>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="margin-top:18px;">
+            Send Enquiry
+          </button>
+
+
+          <div
+            id="formMsg"
+            class="form-msg">
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+
+      <div>
+
+        <h4>Boeri en Black</h4>
+
+        <p>
+          South African-inspired boerewors, beer and braai culture.
+          Good food. Cold beer. Great company.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Quick Links</h4>
+
+        <ul>
+
+          <li>
+            <a href="#home">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#about">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="#products">
+              Products
+            </a>
+          </li>
+
+          <li>
+            <a href="#story">
+              Our Story
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>Contact</h4>
+
+        <ul>
+
+          <li>
+            Phone: 089-123-4567
+          </li>
+
+          <li>
+            Email: info@boerienblack.com
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      &copy;
+      <span id="year"></span>
+      Boeri en Black. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+
+      menuToggle.addEventListener(
+        "click",
+        function () {
+
+          navLinks.classList.toggle("show");
+
+        }
+      );
+
+    }
+
+
+    /* FOOTER YEAR */
+
+    const yearSpan =
+      document.getElementById("year");
+
+    if (yearSpan) {
+
+      yearSpan.textContent =
+        new Date().getFullYear();
+
+    }
+
+
+    /* CONTACT FORM */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    const formMsg =
+      document.getElementById("formMsg");
+
+
+    if (contactForm) {
+
+      contactForm.addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById("name")
+              .value
+              .trim();
+
+
+          const email =
+            document
+              .getElementById("email")
+              .value
+              .trim();
+
+
+          const message =
+            document
+              .getElementById("message")
+              .value
+              .trim();
+
+
+          const interest =
+            document
+              .getElementById("interest")
+              .value;
+
+
+          const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+          if (
+            name === "" ||
+            email === "" ||
+            message === "" ||
+            interest === ""
+          ) {
+
+            showMessage(
+              "Please complete all fields before sending.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          if (!emailPattern.test(email)) {
+
+            showMessage(
+              "Please enter a valid email address.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          showMessage(
+            "Thanks, " +
+            name +
+            "! Your enquiry has been received. We will contact you at " +
+            email +
+            " soon.",
+            "success"
+          );
+
+
+          contactForm.reset();
+
+        }
+      );
+
+    }
+
+
+    function showMessage(text, type) {
+
+      formMsg.textContent = text;
+
+      formMsg.className =
+        "form-msg " + type;
+
+    }
+
+
+    /* CLOSE MOBILE MENU AFTER CLICKING A LINK */
+
+    const links =
+      document.querySelectorAll(".nav-links a");
+
+    links.forEach(function(link) {
+
+      link.addEventListener(
+        "click",
+        function() {
+
+          navLinks.classList.remove("show");
+
+        }
+      );
+
+    });
+
+  </script>
+
+</body>
+</html>
